@@ -40,7 +40,7 @@ class _ApplyJobBottomSheetState extends State<ApplyJobBottomSheet> {
               width: 40,
               height: 4,
               decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.onSurface.withOpacity(0.3),
+                color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.3),
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
@@ -70,7 +70,7 @@ class _ApplyJobBottomSheetState extends State<ApplyJobBottomSheet> {
                     Text(
                       widget.job.title,
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+                        color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
                       ),
                     ),
                   ],
@@ -105,7 +105,7 @@ class _ApplyJobBottomSheetState extends State<ApplyJobBottomSheet> {
               return Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.surfaceVariant.withOpacity(0.3),
+                  color: Theme.of(context).colorScheme.surfaceContainerHighest.withValues(alpha: 0.3),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Column(
@@ -113,7 +113,7 @@ class _ApplyJobBottomSheetState extends State<ApplyJobBottomSheet> {
                     Icon(
                       Icons.description_outlined,
                       size: 48,
-                      color: Theme.of(context).colorScheme.onSurface.withOpacity(0.5),
+                      color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.5),
                     ),
                     const SizedBox(height: 12),
                     Text(
@@ -126,7 +126,7 @@ class _ApplyJobBottomSheetState extends State<ApplyJobBottomSheet> {
                     Text(
                       'Please upload a resume first to apply for jobs.',
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+                        color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -208,8 +208,8 @@ class _ApplyJobBottomSheetState extends State<ApplyJobBottomSheet> {
       margin: const EdgeInsets.only(bottom: 8),
       child: Material(
         color: isSelected 
-            ? Theme.of(context).colorScheme.primary.withOpacity(0.1)
-            : Theme.of(context).colorScheme.surfaceVariant.withOpacity(0.3),
+            ? Theme.of(context).colorScheme.primary.withValues(alpha: 0.1)
+            : Theme.of(context).colorScheme.surfaceContainerHighest.withValues(alpha: 0.3),
         borderRadius: BorderRadius.circular(8),
         child: InkWell(
           onTap: () {
@@ -228,14 +228,14 @@ class _ApplyJobBottomSheetState extends State<ApplyJobBottomSheet> {
                   decoration: BoxDecoration(
                     color: isSelected 
                         ? Theme.of(context).colorScheme.primary
-                        : Theme.of(context).colorScheme.onSurface.withOpacity(0.1),
+                        : Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Icon(
                     _getFileIcon(resume.fileExtension),
                     color: isSelected 
                         ? Colors.white
-                        : Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
+                        : Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
                     size: 20,
                   ),
                 ),
@@ -256,7 +256,7 @@ class _ApplyJobBottomSheetState extends State<ApplyJobBottomSheet> {
                       Text(
                         'Uploaded ${resume.formattedDate}',
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
+                          color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
                         ),
                       ),
                       if (resume.applicationsCount > 0) ...[

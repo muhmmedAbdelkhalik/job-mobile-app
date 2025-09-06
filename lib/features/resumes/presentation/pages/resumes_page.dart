@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/resume_controller.dart';
 import '../widgets/resume_card.dart';
-import '../../../../core/services/snackbar_service.dart';
 
 class ResumesPage extends StatelessWidget {
   const ResumesPage({super.key});
@@ -36,21 +35,21 @@ class ResumesPage extends StatelessWidget {
                 Icon(
                   Icons.description_outlined,
                   size: 64,
-                  color: Theme.of(context).colorScheme.onSurface.withOpacity(0.3),
+                  color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.3),
                 ),
                 const SizedBox(height: 16),
                 Text(
                   'No Resumes Found',
                   style: Theme.of(
                     context,
-                  ).textTheme.titleMedium?.copyWith(color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7)),
+                  ).textTheme.titleMedium?.copyWith(color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7)),
                 ),
                 const SizedBox(height: 8),
                 Text(
                   'Upload your first resume to get started',
                   style: Theme.of(
                     context,
-                  ).textTheme.bodyMedium?.copyWith(color: Theme.of(context).colorScheme.onSurface.withOpacity(0.5)),
+                  ).textTheme.bodyMedium?.copyWith(color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.5)),
                 ),
                 const SizedBox(height: 24),
                 ElevatedButton.icon(

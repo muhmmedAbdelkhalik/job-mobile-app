@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import '../../core/cache/hive_cache_manager.dart';
 import '../../core/services/snackbar_service.dart';
 

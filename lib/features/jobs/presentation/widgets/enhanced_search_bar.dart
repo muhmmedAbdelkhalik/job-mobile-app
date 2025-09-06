@@ -34,7 +34,7 @@ class _EnhancedSearchBarState extends State<EnhancedSearchBar> {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 2),
           ),
@@ -62,7 +62,7 @@ class _EnhancedSearchBarState extends State<EnhancedSearchBar> {
                 borderSide: BorderSide.none,
               ),
               filled: true,
-              fillColor: Theme.of(context).colorScheme.background,
+              fillColor: Theme.of(context).colorScheme.surface,
             ),
             onSubmitted: (value) {
               _jobController.searchJobs(value);
@@ -120,11 +120,11 @@ class _EnhancedSearchBarState extends State<EnhancedSearchBar> {
           _jobController.filterByType(value);
         }
       },
-      selectedColor: const Color(0xFF3B82F6).withOpacity(0.2),
+      selectedColor: const Color(0xFF3B82F6).withValues(alpha: 0.2),
       checkmarkColor: const Color(0xFF3B82F6),
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       side: BorderSide(
-        color: isSelected ? const Color(0xFF3B82F6) : Colors.grey.withOpacity(0.3),
+        color: isSelected ? const Color(0xFF3B82F6) : Colors.grey.withValues(alpha: 0.3),
       ),
     );
   }

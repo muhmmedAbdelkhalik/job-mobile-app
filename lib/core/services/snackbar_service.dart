@@ -23,7 +23,7 @@ class SnackbarService {
       snackPosition: position ?? _defaultPosition,
       margin: EdgeInsets.all(margin ?? _defaultMargin),
       borderRadius: _defaultBorderRadius,
-      backgroundColor: AppTheme.success.withOpacity(0.9),
+      backgroundColor: AppTheme.success.withValues(alpha: 0.9),
       colorText: Colors.white,
       icon: const Icon(
         Icons.check_circle,
@@ -54,7 +54,7 @@ class SnackbarService {
       snackPosition: position ?? _defaultPosition,
       margin: EdgeInsets.all(margin ?? _defaultMargin),
       borderRadius: _defaultBorderRadius,
-      backgroundColor: AppTheme.error.withOpacity(0.9),
+      backgroundColor: AppTheme.error.withValues(alpha: 0.9),
       colorText: Colors.white,
       icon: const Icon(
         Icons.error,
@@ -85,7 +85,7 @@ class SnackbarService {
       snackPosition: position ?? _defaultPosition,
       margin: EdgeInsets.all(margin ?? _defaultMargin),
       borderRadius: _defaultBorderRadius,
-      backgroundColor: AppTheme.warning.withOpacity(0.9),
+      backgroundColor: AppTheme.warning.withValues(alpha: 0.9),
       colorText: Colors.white,
       icon: const Icon(
         Icons.warning,
@@ -116,7 +116,7 @@ class SnackbarService {
       snackPosition: position ?? _defaultPosition,
       margin: EdgeInsets.all(margin ?? _defaultMargin),
       borderRadius: _defaultBorderRadius,
-      backgroundColor: AppTheme.info.withOpacity(0.9),
+      backgroundColor: AppTheme.info.withValues(alpha: 0.9),
       colorText: Colors.white,
       icon: const Icon(
         Icons.info,
@@ -158,7 +158,7 @@ class SnackbarService {
       snackPosition: position ?? _defaultPosition,
       margin: EdgeInsets.all(margin ?? _defaultMargin),
       borderRadius: _defaultBorderRadius,
-      backgroundColor: backgroundColor ?? defaultBgColor.withOpacity(0.95),
+      backgroundColor: backgroundColor ?? defaultBgColor.withValues(alpha: 0.95),
       colorText: textColor ?? defaultTextColor,
       icon: icon != null
           ? Icon(
@@ -191,7 +191,7 @@ class SnackbarService {
       snackPosition: position ?? _defaultPosition,
       margin: EdgeInsets.all(margin ?? _defaultMargin),
       borderRadius: _defaultBorderRadius,
-      backgroundColor: AppTheme.primaryBlue.withOpacity(0.9),
+      backgroundColor: AppTheme.primaryBlue.withValues(alpha: 0.9),
       colorText: Colors.white,
       icon: const Icon(
         Icons.hourglass_empty,

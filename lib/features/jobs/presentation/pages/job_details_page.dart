@@ -13,10 +13,7 @@ import '../../../../core/services/snackbar_service.dart';
 class JobDetailsPage extends StatelessWidget {
   final String jobId;
 
-  const JobDetailsPage({
-    super.key,
-    required this.jobId,
-  });
+  const JobDetailsPage({super.key, required this.jobId});
 
   @override
   Widget build(BuildContext context) {
@@ -31,10 +28,7 @@ class JobDetailsPage extends StatelessWidget {
         centerTitle: true,
         actions: [
           // Cache status indicator
-          CacheStatusIndicator(
-            cacheKey: 'cached_job_details_$jobId',
-            label: 'Cache Status',
-          ),
+          CacheStatusIndicator(cacheKey: 'cached_job_details_$jobId', label: 'Cache Status'),
           const SizedBox(width: 8),
           // Cache management menu
           PopupMenuButton<String>(
@@ -55,45 +49,17 @@ class JobDetailsPage extends StatelessWidget {
             itemBuilder: (context) => [
               const PopupMenuItem(
                 value: 'refresh',
-                child: Row(
-                  children: [
-                    Icon(Icons.refresh),
-                    SizedBox(width: 8),
-                    Text('Force Refresh'),
-                  ],
-                ),
+                child: Row(children: [Icon(Icons.refresh), SizedBox(width: 8), Text('Force Refresh')]),
               ),
               const PopupMenuItem(
                 value: 'clear_cache',
-                child: Row(
-                  children: [
-                    Icon(Icons.cached),
-                    SizedBox(width: 8),
-                    Text('Clear Job Cache'),
-                  ],
-                ),
+                child: Row(children: [Icon(Icons.cached), SizedBox(width: 8), Text('Clear Job Cache')]),
               ),
               const PopupMenuItem(
                 value: 'cache_stats',
-                child: Row(
-                  children: [
-                    Icon(Icons.analytics),
-                    SizedBox(width: 8),
-                    Text('Cache Statistics'),
-                  ],
-                ),
+                child: Row(children: [Icon(Icons.analytics), SizedBox(width: 8), Text('Cache Statistics')]),
               ),
             ],
-          ),
-          IconButton(
-            icon: const Icon(Icons.share),
-            onPressed: () {
-              // TODO: Implement share functionality
-              SnackbarService.showInfo(
-                title: 'Info',
-                message: 'Share functionality coming soon!',
-              );
-            },
           ),
         ],
       ),
@@ -107,29 +73,19 @@ class JobDetailsPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
-                  Icons.error_outline,
-                  size: 64,
-                  color: Theme.of(context).colorScheme.error,
-                ),
+                Icon(Icons.error_outline, size: 64, color: Theme.of(context).colorScheme.error),
                 const SizedBox(height: 16),
-                Text(
-                  'Job not found',
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
+                Text('Job not found', style: Theme.of(context).textTheme.titleLarge),
                 const SizedBox(height: 8),
                 Text(
                   'The job you are looking for does not exist or has been removed.',
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+                    color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
                   ),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 24),
-                ElevatedButton(
-                  onPressed: () => Get.back(),
-                  child: const Text('Go Back'),
-                ),
+                ElevatedButton(onPressed: () => Get.back(), child: const Text('Go Back')),
               ],
             ),
           );
@@ -157,15 +113,15 @@ class JobDetailsPage extends StatelessWidget {
                               children: [
                                 Text(
                                   job.title,
-                                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                  style: Theme.of(
+                                    context,
+                                  ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
                                 ),
                                 const SizedBox(height: 8),
                                 Text(
                                   '${job.company.name} • ${job.location}',
                                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                                    color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+                                    color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
                                   ),
                                 ),
                                 const SizedBox(height: 12),
@@ -215,13 +171,13 @@ class JobDetailsPage extends StatelessWidget {
                           Icon(
                             Icons.category_outlined,
                             size: 16,
-                            color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
+                            color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
                           ),
                           const SizedBox(width: 4),
                           Text(
                             job.category.name,
                             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
+                              color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
                             ),
                           ),
                           const Spacer(),
@@ -229,13 +185,13 @@ class JobDetailsPage extends StatelessWidget {
                             Icon(
                               Icons.visibility_outlined,
                               size: 16,
-                              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
+                              color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
                             ),
                             const SizedBox(width: 4),
                             Text(
                               '${job.viewCount} views',
                               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
+                                color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
                               ),
                             ),
                           ],
@@ -257,17 +213,10 @@ class JobDetailsPage extends StatelessWidget {
                     children: [
                       Text(
                         'Job Description',
-                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 12),
-                      Text(
-                        job.description,
-                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          height: 1.6,
-                        ),
-                      ),
+                      Text(job.description, style: Theme.of(context).textTheme.bodyMedium?.copyWith(height: 1.6)),
                     ],
                   ),
                 ),
@@ -294,20 +243,13 @@ class JobDetailsPage extends StatelessWidget {
                     children: [
                       Text(
                         'Job Information',
-                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 16),
                       Row(
                         children: [
                           Expanded(
-                            child: _buildInfoItem(
-                              context,
-                              'Posted',
-                              _formatDate(job.createdAt),
-                              Icons.schedule,
-                            ),
+                            child: _buildInfoItem(context, 'Posted', _formatDate(job.createdAt), Icons.schedule),
                           ),
                           Expanded(
                             child: _buildInfoItem(
@@ -322,22 +264,8 @@ class JobDetailsPage extends StatelessWidget {
                       const SizedBox(height: 12),
                       Row(
                         children: [
-                          Expanded(
-                            child: _buildInfoItem(
-                              context,
-                              'Location',
-                              job.location,
-                              Icons.location_on,
-                            ),
-                          ),
-                          Expanded(
-                            child: _buildInfoItem(
-                              context,
-                              'Type',
-                              job.formattedType,
-                              Icons.work,
-                            ),
-                          ),
+                          Expanded(child: _buildInfoItem(context, 'Location', job.location, Icons.location_on)),
+                          Expanded(child: _buildInfoItem(context, 'Type', job.formattedType, Icons.work)),
                         ],
                       ),
                     ],
@@ -352,7 +280,7 @@ class JobDetailsPage extends StatelessWidget {
       }),
       floatingActionButton: Obx(() {
         if (jobController.selectedJob == null) return const SizedBox.shrink();
-        
+
         return FloatingActionButton.extended(
           onPressed: () {
             if (authController.isLoggedIn) {
@@ -364,15 +292,9 @@ class JobDetailsPage extends StatelessWidget {
                   job: jobController.selectedJob!,
                   onApply: (resumeId) async {
                     try {
-                      await applicationController.applyForJob(
-                        jobController.selectedJob!.id,
-                        resumeId,
-                      );
+                      await applicationController.applyForJob(jobController.selectedJob!.id, resumeId);
                       Get.back(); // Close bottom sheet
-                      SnackbarService.showSuccess(
-                        title: 'Success',
-                        message: 'Application submitted successfully!',
-                      );
+                      SnackbarService.showSuccess(title: 'Success', message: 'Application submitted successfully!');
                     } catch (e) {
                       SnackbarService.showError(
                         title: 'Error',
@@ -383,15 +305,10 @@ class JobDetailsPage extends StatelessWidget {
                 ),
                 isScrollControlled: true,
                 backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-                ),
+                shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
               );
             } else {
-              SnackbarService.showWarning(
-                title: 'Login Required',
-                message: 'Please login to apply for jobs',
-              );
+              SnackbarService.showWarning(title: 'Login Required', message: 'Please login to apply for jobs');
             }
           },
           icon: const Icon(Icons.send),
@@ -408,28 +325,19 @@ class JobDetailsPage extends StatelessWidget {
       children: [
         Row(
           children: [
-            Icon(
-              icon,
-              size: 16,
-              color: Theme.of(context).colorScheme.primary,
-            ),
+            Icon(icon, size: 16, color: Theme.of(context).colorScheme.primary),
             const SizedBox(width: 4),
             Text(
               label,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
+                color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
                 fontWeight: FontWeight.w500,
               ),
             ),
           ],
         ),
         const SizedBox(height: 4),
-        Text(
-          value,
-          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-            fontWeight: FontWeight.w600,
-          ),
-        ),
+        Text(value, style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600)),
       ],
     );
   }
@@ -437,7 +345,7 @@ class JobDetailsPage extends StatelessWidget {
   String _formatDate(DateTime date) {
     final now = DateTime.now();
     final difference = now.difference(date);
-    
+
     if (difference.inDays == 0) {
       return 'Today';
     } else if (difference.inDays == 1) {
@@ -451,7 +359,7 @@ class JobDetailsPage extends StatelessWidget {
 
   void _showCacheStats(BuildContext context, JobController controller) {
     final stats = controller.getCacheStats();
-    
+
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -469,12 +377,7 @@ class JobDetailsPage extends StatelessWidget {
             Text('This Job Cached: ${controller.hasCachedJobDetails(jobId) ? "Yes" : "No"}'),
           ],
         ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('Close'),
-          ),
-        ],
+        actions: [TextButton(onPressed: () => Navigator.pop(context), child: const Text('Close'))],
       ),
     );
   }

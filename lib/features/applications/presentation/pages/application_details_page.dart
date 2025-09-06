@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/application_controller.dart';
 import '../../domain/entities/application.dart';
-import '../../../../core/services/snackbar_service.dart';
 
 class ApplicationDetailsPage extends StatelessWidget {
   final String applicationId;
@@ -20,18 +19,6 @@ class ApplicationDetailsPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Application Details'),
         centerTitle: true,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.share),
-            onPressed: () {
-              // TODO: Implement share functionality
-              SnackbarService.showInfo(
-                title: 'Info',
-                message: 'Share functionality coming soon!',
-              );
-            },
-          ),
-        ],
       ),
       body: Obx(() {
         final application = applicationController.applications.firstWhereOrNull(
@@ -57,7 +44,7 @@ class ApplicationDetailsPage extends StatelessWidget {
                 Text(
                   'The application you are looking for does not exist or has been removed.',
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+                    color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -113,7 +100,7 @@ class ApplicationDetailsPage extends StatelessWidget {
                                 Text(
                                   application.displayCompanyName,
                                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                                    color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+                                    color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
                                   ),
                                 ),
                                 const SizedBox(height: 8),
@@ -138,7 +125,7 @@ class ApplicationDetailsPage extends StatelessWidget {
                                     Container(
                                       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                                       decoration: BoxDecoration(
-                                        color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+                                        color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
                                         borderRadius: BorderRadius.circular(16),
                                       ),
                                       child: Text(
@@ -370,10 +357,10 @@ class ApplicationDetailsPage extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: _getScoreColor(application.aiScore).withOpacity(0.1),
+        color: _getScoreColor(application.aiScore).withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(8),
         border: Border.all(
-          color: _getScoreColor(application.aiScore).withOpacity(0.3),
+          color: _getScoreColor(application.aiScore).withValues(alpha: 0.3),
         ),
       ),
       child: Column(
@@ -399,7 +386,7 @@ class ApplicationDetailsPage extends StatelessWidget {
           const SizedBox(height: 12),
           LinearProgressIndicator(
             value: application.aiScore / 100,
-            backgroundColor: _getScoreColor(application.aiScore.toInt()).withOpacity(0.2),
+            backgroundColor: _getScoreColor(application.aiScore.toInt()).withValues(alpha: 0.2),
             valueColor: AlwaysStoppedAnimation<Color>(_getScoreColor(application.aiScore.toInt())),
             minHeight: 8,
           ),
@@ -407,7 +394,7 @@ class ApplicationDetailsPage extends StatelessWidget {
           Text(
             _getScoreDescription(application.aiScore.toInt()),
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+              color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
             ),
             textAlign: TextAlign.center,
           ),
@@ -441,7 +428,7 @@ class ApplicationDetailsPage extends StatelessWidget {
           width: double.infinity,
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.surfaceVariant.withOpacity(0.3),
+            color: Theme.of(context).colorScheme.surfaceContainerHighest.withValues(alpha: 0.3),
             borderRadius: BorderRadius.circular(8),
           ),
           child: Text(
@@ -476,7 +463,7 @@ class ApplicationDetailsPage extends StatelessWidget {
               Text(
                 label,
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
+                  color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -509,14 +496,14 @@ class ApplicationDetailsPage extends StatelessWidget {
           decoration: BoxDecoration(
             color: isCompleted 
                 ? Theme.of(context).colorScheme.primary
-                : Theme.of(context).colorScheme.onSurface.withOpacity(0.2),
+                : Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.2),
             borderRadius: BorderRadius.circular(16),
           ),
           child: Icon(
             icon,
             color: isCompleted 
                 ? Colors.white
-                : Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
+                : Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
             size: 16,
           ),
         ),
@@ -531,13 +518,13 @@ class ApplicationDetailsPage extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                   color: isCompleted 
                       ? Theme.of(context).colorScheme.onSurface
-                      : Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
+                      : Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
                 ),
               ),
               Text(
                 subtitle,
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+                  color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.7),
                 ),
               ),
             ],

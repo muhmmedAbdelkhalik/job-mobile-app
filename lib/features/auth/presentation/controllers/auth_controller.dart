@@ -5,11 +5,6 @@ import '../../domain/usecases/register_usecase.dart';
 import '../../domain/repositories/auth_repository.dart';
 import '../../../../core/cache/hive_cache_manager.dart';
 import '../../../../core/services/snackbar_service.dart';
-import '../../../../core/navigation/navigation_controller.dart';
-import '../../../jobs/presentation/controllers/job_controller.dart';
-import '../../../resumes/presentation/controllers/resume_controller.dart';
-import '../../../applications/presentation/controllers/application_controller.dart';
-import '../../../profile/presentation/controllers/profile_controller.dart';
 
 class AuthController extends GetxController {
   final LoginUseCase _loginUseCase;

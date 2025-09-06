@@ -43,14 +43,12 @@ class AppTheme {
       primary: primaryBlue,
       secondary: primaryPurple,
       surface: cardLight,
-      background: backgroundLight,
       onPrimary: Colors.white,
       onSecondary: Colors.white,
       onSurface: textPrimaryLight,
-      onBackground: textPrimaryLight,
       error: error,
       onError: Colors.white,
-      surfaceVariant: Color(0xFFF3F4F6), // gray-100
+      surfaceContainerHighest: Color(0xFFF3F4F6), // gray-100
       onSurfaceVariant: Color(0xFF6B7280), // gray-500
     ),
     scaffoldBackgroundColor: backgroundLight,
@@ -67,7 +65,7 @@ class AppTheme {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
-      shadowColor: Colors.black.withOpacity(0.1),
+      shadowColor: Colors.black.withValues(alpha: 0.1),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
@@ -78,7 +76,7 @@ class AppTheme {
           borderRadius: BorderRadius.circular(8),
         ),
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-        shadowColor: Colors.black.withOpacity(0.1),
+        shadowColor: Colors.black.withValues(alpha: 0.1),
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
@@ -127,14 +125,12 @@ class AppTheme {
       primary: primaryBlue,
       secondary: primaryPurple,
       surface: cardDark,
-      background: backgroundDark,
       onPrimary: Colors.white,
       onSecondary: Colors.white,
       onSurface: textPrimaryDark,
-      onBackground: textPrimaryDark,
       error: error,
       onError: Colors.white,
-      surfaceVariant: Color(0xFF374151), // gray-700
+      surfaceContainerHighest: Color(0xFF374151), // gray-700
       onSurfaceVariant: Color(0xFFD1D5DB), // gray-300
     ),
     scaffoldBackgroundColor: backgroundDark,
@@ -151,7 +147,7 @@ class AppTheme {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
-      shadowColor: Colors.black.withOpacity(0.3),
+      shadowColor: Colors.black.withValues(alpha: 0.3),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
@@ -162,7 +158,7 @@ class AppTheme {
           borderRadius: BorderRadius.circular(8),
         ),
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-        shadowColor: Colors.black.withOpacity(0.3),
+        shadowColor: Colors.black.withValues(alpha: 0.3),
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
