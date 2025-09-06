@@ -1,0 +1,70 @@
+# Flutter/Dart/Pub related
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Flutter/app.flx
+ios/Flutter/app.zip
+ios/Flutter/flutter_assets/
+ios/Flutter/ephemeral/
+android/.gradle/
+android/app/build/
+android/.idea/
+android/local.properties
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VS Code
+.vscode/
+
+# Xcode
+xcuserdata/
+DerivedData/
+*.xcworkspace
+*.xcuserstate
+
+# Others
+*.log
+*.lock
+*.tmp
+*.swp
+
+# Flutter generated files
+.flutter-plugins
+.flutter-plugins-dependencies
+.flutter-versions
+.flutter_export_environment.sh
+.melos_tool_version
+
+# Web
+web/.dart_tool/
+web/build/
+
+# macOS
+macos/Flutter/ephemeral/
+macos/Flutter/GeneratedPluginRegistrant.swift
+macos/build/
+
+# Windows
+windows/Flutter/ephemeral/
+windows/build/
+
+# Linux
+linux/Flutter/ephemeral/
+linux/build/
+
+# Coverage
+coverage/
+
+# Hive/Storage
+*.hive
+*.hive.lock
+
+# Get Storage
+get_storage/
